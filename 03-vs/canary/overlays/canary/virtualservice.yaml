@@ -1,0 +1,19 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: front
+spec:
+  hosts:
+  - front.lab-vs-canary.svc.cluster.local
+  http:
+  - match:
+    - headers:
+       cookie:
+         regex: "^(.*;?)*(user_type=tester)(;.*)*"
+    route:
+    - destination:
+        host: front-v2.lab-vs-canary.svc.cluster.local
+  - route:
+    - destination:
+        host: front-v1.lab-vs-canary.svc.cluster.local

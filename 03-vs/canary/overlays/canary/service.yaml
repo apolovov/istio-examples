@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-v1
+  labels:
+    app: front-v1
+spec:
+  ports:
+  - port: 80
+    name: http
+    targetPort: 5000
+  selector:
+    app: front-v1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-v2
+  labels:
+    app: front-v2
+spec:
+  ports:
+  - port: 80
+    name: http
+    targetPort: 5000
+  selector:
+    app: front-v2

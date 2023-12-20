@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-v2
+  labels:
+    app: front
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: front
+        version: v2
+    spec:
+      containers:
+      - name: app
+        image: docker.io/istio/examples-helloworld-v2
+        resources:
+          requests:
+            cpu: "100m"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000

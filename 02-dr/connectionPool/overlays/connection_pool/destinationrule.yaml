@@ -1,0 +1,14 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: front
+spec:
+  host: front.lab-dr-cp.svc.cluster.local
+  trafficPolicy:
+    connectionPool:
+      tcp:
+        maxConnections: 10
+        maxConnectionDuration: 3
+      http:
+        maxRequestsPerConnection: 3

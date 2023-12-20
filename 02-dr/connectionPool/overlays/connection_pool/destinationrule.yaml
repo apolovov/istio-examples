@@ -9,6 +9,6 @@ spec:
     connectionPool:
       tcp:
         maxConnections: 10
-        maxConnectionDuration: 3
+        maxConnectionDuration: 10ms
       http:
         maxRequestsPerConnection: 3

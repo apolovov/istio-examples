@@ -23,6 +23,9 @@ spec:
       containers:
       - name: client
         image: curlimages/curl
-        command: ["/bin/sleep", "infinity"]
+        command:
+        - sh
+        - -c
+        - while :; do curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"; sleep 1; done
         imagePullPolicy: IfNotPresent
 ---

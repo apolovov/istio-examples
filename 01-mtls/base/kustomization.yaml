@@ -5,3 +5,4 @@ resources:
 - namespace.yaml
 - app-foo.yaml
 - app-bar.yaml
+- app-outcast.yaml

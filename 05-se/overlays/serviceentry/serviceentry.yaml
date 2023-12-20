@@ -8,6 +8,9 @@ spec:
   - ip.flant.ru
   location: MESH_EXTERNAL
   ports:
+  - number: 80
+    name: http
+    protocol: HTTP
   - number: 443
     name: https
     protocol: TLS

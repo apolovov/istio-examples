@@ -1,7 +1,11 @@
 ```bash
+kubectl apply -k 03-vs/canary/overlays/default/
+kubectl apply -k 03-vs/canary/overlays/new-version/
+kubectl apply -k 03-vs/canary/overlays/canary/
+```
+```bash
 kubectl -n lab-vs-canary exec -ti deployment/client -- /bin/bash
 ```
-
 ```bash
 curl -s front/hello
 ```

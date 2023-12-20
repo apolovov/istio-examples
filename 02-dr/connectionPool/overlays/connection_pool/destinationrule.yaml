@@ -4,7 +4,7 @@ kind: DestinationRule
 metadata:
   name: front
 spec:
-  host: front.lab-dr-cp.svc.cluster.local
+  host: front
   trafficPolicy:
     connectionPool:
       tcp:

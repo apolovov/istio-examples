@@ -5,7 +5,7 @@ metadata:
   name: front
 spec:
   hosts:
-  - front.lab-vs-simple.svc.cluster.local
+  - front
   http:
   - match:
     - uri:
@@ -14,7 +14,7 @@ spec:
       uri: "/hello"
     route:
     - destination:
-        host: admin.lab-vs-simple.svc.cluster.local
+        host: admin
   - route:
     - destination:
-        host: front.lab-vs-simple.svc.cluster.local
+        host: front

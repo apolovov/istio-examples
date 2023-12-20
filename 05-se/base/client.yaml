@@ -1,17 +1,8 @@
 ---
 apiVersion: v1
-kind: Service
+kind: ServiceAccount
 metadata:
-  name: client
-  labels:
-    app: client
-    service: client
-spec:
-  ports:
-  - port: 80
-    name: http
-  selector:
-    app: client
+  name: front
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,6 +18,7 @@ spec:
       labels:
         app: client
     spec:
+      serviceAccountName: front
       terminationGracePeriodSeconds: 0
       containers:
       - name: client

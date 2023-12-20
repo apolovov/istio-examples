@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: lab-vs-canary
 resources:
 - ../../base
-- ../new-version/front-v2.yaml
+- front-v2.yaml
 - service.yaml
 - virtualservice.yaml

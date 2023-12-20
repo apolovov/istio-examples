@@ -4,7 +4,7 @@ kubectl apply -k 03-vs/simple/overlays/default/
 kubectl apply -k 03-vs/simple/overlays/location/
 ```
 ```bash
-kubectl -n lab-vs-simple exec -ti deployment/client -- /bin/bash
+kubectl -n lab-vs-simple exec -ti deployment/client -- /bin/sh
 ```
 ```bash
 curl -s front/hello

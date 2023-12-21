@@ -6,21 +6,21 @@ resources:
 - namespace.yaml
 
 images:
-- name: docker.io/istio/examples-bookinfo-details-v1:1.18.0
+- name: docker.io/istio/examples-bookinfo-details-v1
   newName: docker.io/driusha/examples-bookinfo-details-v1
-  newTag: 0.1
-- name: docker.io/istio/examples-bookinfo-ratings-v1:1.18.0
+  newTag: "0.1"
+- name: docker.io/istio/examples-bookinfo-ratings-v1
   newName: docker.io/driusha/examples-bookinfo-ratings-v1
-  newTag: 0.1
-- name: docker.io/istio/examples-bookinfo-reviews-v1:1.18.0
+  newTag: "0.1"
+- name: docker.io/istio/examples-bookinfo-reviews-v1
   newName: docker.io/driusha/examples-bookinfo-reviews-v1
-  newTag: 0.1
-- name: docker.io/istio/examples-bookinfo-reviews-v2:1.18.0
+  newTag: "0.1"
+- name: docker.io/istio/examples-bookinfo-reviews-v2
   newName: docker.io/driusha/examples-bookinfo-reviews-v2
-  newTag: 0.1
-- name: docker.io/istio/examples-bookinfo-reviews-v3:1.18.0
+  newTag: "0.1"
+- name: docker.io/istio/examples-bookinfo-reviews-v3
   newName: docker.io/driusha/examples-bookinfo-reviews-v3
-  newTag: 0.1
-- name: docker.io/istio/examples-bookinfo-productpage-v1:1.18.0
+  newTag: "0.1"
+- name: docker.io/istio/examples-bookinfo-productpage-v1
   newName: docker.io/driusha/examples-bookinfo-productpage-v1
-  newTag: 0.1
+  newTag: "0.1"

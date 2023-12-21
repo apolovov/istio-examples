@@ -4,4 +4,4 @@ kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: istio-bookinfo
+  name: lab-bookinfo-bad

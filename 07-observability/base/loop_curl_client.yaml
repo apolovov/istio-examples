@@ -26,6 +26,6 @@ spec:
         command:
         - sh
         - -c
-        - while :; do curl -s productpage:9080/productpage | grep -o "<title>.*</title>"; sleep 1; done
+        - while :; do curl -s productpage:9080/productpage | grep -o "<title>.*</title>"; sleep 0.1; done
         imagePullPolicy: IfNotPresent
 ---

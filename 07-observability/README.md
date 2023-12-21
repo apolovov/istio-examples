@@ -1,11 +1,11 @@
 ```bash
-kubectl apply -k 07-observability/overlays/default
-kubectl apply -k 07-observability/overlays/ingress
-kubectl apply -k 07-observability/overlays/loop_curl
+kubectl apply -k 07-observability/overlays/good_header
+kubectl apply -k 07-observability/overlays/bad_header
 kubectl apply -k 07-observability/overlays/tracing
 ```
 ```bash
-kubectl -n istio-bookinfo exec -ti deployment/client -- /bin/sh
+kubectl -n lab-bookinfo-good exec -ti deployment/client -- /bin/sh
+kubectl -n lab-bookinfo-bad exec -ti deployment/client -- /bin/sh
 ```
 ```bash
 curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
@@ -35,8 +35,12 @@ spec:
           address: zipkin.istio-jaeger.svc.cluster.local:9411
       enabled: true
       kiali:
-        jaegerURLForUsers: https://$INGRESS_HOST_IP:80/jaeger
+        jaegerURLForUsers: http://$INGRESS_HOST_IP:80/jaeger
         jaegerGRPCEndpoint: http://tracing.istio-jaeger.svc.cluster.local:16685/
       sampling: 100.0
 
+```
+```bash
+kubectl -n lab-bookinfo-good delete pod --all
+kubectl -n lab-bookinfo-bad delete pod --all
 ```

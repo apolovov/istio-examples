@@ -37,5 +37,6 @@ spec:
       kiali:
         jaegerURLForUsers: https://$INGRESS_HOST_IP:80/jaeger
         jaegerGRPCEndpoint: http://tracing.istio-jaeger.svc.cluster.local:16685/
+      sampling: 100.0
 
 ```

@@ -35,7 +35,7 @@ spec:
           address: zipkin.istio-jaeger.svc.cluster.local:9411
       enabled: true
       kiali:
-        jaegerURLForUsers: https://tracing.istio-jaeger.svc.cluster.local:16686/jaeger
+        jaegerURLForUsers: https://$INGRESS_HOST_IP:80/jaeger
         jaegerGRPCEndpoint: http://tracing.istio-jaeger.svc.cluster.local:16685/
 
 ```

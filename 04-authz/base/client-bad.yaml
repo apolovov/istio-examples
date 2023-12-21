@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: client-bad
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-bad
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-bad
+  template:
+    metadata:
+      labels:
+        app: client-bad
+    spec:
+      serviceAccountName: client-bad
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: client-bad
+        image: curlimages/curl
+        command: ["/bin/sleep", "infinity"]
+        imagePullPolicy: IfNotPresent
+---

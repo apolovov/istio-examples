@@ -1,0 +1,15 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: outlier-detection
+spec:
+  host: "backend"
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 7
+      interval: 5s
+      baseEjectionTime: 10s
+      maxEjectionPercent: 100
+
+

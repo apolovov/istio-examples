@@ -5,10 +5,10 @@ resources:
 - ../../base
 
 patches:
- - target:
-      kind: Namespace
-      name: lab-lb-grpc
-    patch: |-
+  - patch: |-
       - op: add
         path: /metadata/labels
         value: {"istio-injection": "enabled"}
+    target:
+      kind: Namespace
+      name: lab-lb-grpc

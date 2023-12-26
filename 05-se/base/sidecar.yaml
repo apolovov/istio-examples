@@ -6,5 +6,5 @@ metadata:
 spec:
   egress:
   - hosts:
-    - "lab-common/*"
+    - "lab-se/*"
     - "d8-istio/*"
